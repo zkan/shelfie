@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+STEPS = [
+  "bin/rails test",
+  "bin/rubocop",
+  "bin/brakeman --quiet --no-pager",
+  "bin/bundle-audit check"
+]
+
+def run(command)
+  border = "-" * command.length
+
+  success = system command
+  unless success
+    puts "This step failed: #{command}"
+    exit 1
+  end
+end
+
+STEPS.each do |step|
+  run step
+end
