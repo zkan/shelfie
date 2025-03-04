@@ -1,2 +1,37 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h1>Add a New Book</h1>
+
+<%= form_with(model: @book, url: books_path) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :author %>
+    <%= form.text_field :author, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn %>
+  </div>
+
+  <div>
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher %>
+  </div>
+
+  <div>
+    <%= form.label :format %>
+    <%= form.text_field :format %>
+  </div>
+
+  <div>
+    <%= form.label :publication_year %>
+    <%= form.number_field :publication_year, min: 0 %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Book" %>
+  </div>
+<% end %>
