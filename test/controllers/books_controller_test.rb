@@ -5,4 +5,9 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     get books_index_url
     assert_response :success
   end
+
+  test "should get new" do
+    get books_new_url
+    assert_response :success
+  end
 end
