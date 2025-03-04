@@ -49,6 +49,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Patch-level verification for Bundler [https://github.com/rubysec/bundler-audit]
+  gem "bundler-audit", "~> 0.9.2", require: false
 end
 
 group :development do
@@ -61,5 +64,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem "bundler-audit", "~> 0.9.2"
