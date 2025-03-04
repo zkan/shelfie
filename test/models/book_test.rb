@@ -6,7 +6,9 @@ class BookTest < ActiveSupport::TestCase
       title: "Seeing the Forest for Trees: A Manager's Guide to Applying Systems Thinking",
       author: "Dennis Sherwoord",
       isbn: "978-1857883114",
-      publisher: "Nicholas Brealey Publishing"
+      format: "paperback",
+      publisher: "Nicholas Brealey Publishing",
+      publication_year: 2002
     )
     assert book.valid?
   end
